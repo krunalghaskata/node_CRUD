@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>carousel component</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "inter" sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+
+      .carousel {
+        background-color: green;
+        width: 800px;
+        margin: 100px auto;
+        border-radius: 8px;
+        padding: 32px 48px 32px 48px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        /*align-items: center;*/
+        gap: 86px;
+        /*
+                padding-left: 86px;
+                padding: 32px;
+                padding-right: 48px;*/
+      }
+
+      img {
+        height: 200px;
+        border-radius: 10px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .testmonial-text {
+        font-size: 18px;
+        font-weight: 500px;
+        line-height: 1.5;
+        margin-bottom: 36px;
+        color: #c3fae8;
+      }
+
+      .testmonial-author {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #c3fae8;
+      }
+
+      .testmonial-job {
+        font-size: 12px;
+        color: #c3fae8;
+      }
+
+      .btn {
+        background-color: #fff;
+        border: none;
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        box-shadow: 0, 0, 0, rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+
+      .btn-icon {
+        height: 24px;
+        width: 24px;
+        stroke: green;
+      }
+
+      .btn--left {
+        border-radius: 50px;
+        top: 50%;
+        transform: translate(-175%, -50%);
+      }
+
+      .btn--right {
+        right: 0;
+        border-radius: 50px;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+
+      .dots {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 50px);
+        bottom: 0;
+        display: flex;
+        gap: 12px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      .dot--fill {
+        background-color: #087f5b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="carousel">
+      <img src="**image**" alt=" jonas de almeida" />
+      <blockquote class="testmonial">
+        <p class="testmonial-text">
+          "lore, ipsum ,dolor sit met consectetur adipisicing elit. accusantium
+          dolor at sequi obcaecati cupiditate.voluptates repellendus cupiditate
+          aperiam!incidunt amet quo neque.
+        </p>
+        <p class="testmonial-author">**title**</p>
+        <p class="testmonial-job">senior product manager at EDP comercial</p>
+      </blockquote>
+      <button class="btn btn--left">
+        <svg
+          class="btn-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </button>
+      <button class="btn btn--right">
+        <svg
+          class="btn-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </button>
+      <div class="dots">
+        <button class="dot">&nbsp;</button>
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
+    </div>
+  </body>
+</html>
