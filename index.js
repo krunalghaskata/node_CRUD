@@ -9,13 +9,13 @@ const server = express();
 server.use(express.json());
 // const rateLimit = require("express-rate-limit");
 
-const index = fs.readFileSync("index.html", "utf-8");
+// const index = fs.readFileSync("index.html", "utf-8");
 // const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 // const product = data.products;
 // const user = data.user;
 
-const userRouter = require("./src/Router/userRouter");
-const productRouter = require("./src/Router/productRouter");
+const userRouter = require("./src/Router/user/userRouter");
+const productRouter = require("./src/Router/product-Route/productRouter");
 
 ///////////////////////////////////////////////////////////////////////////////
 // const server = http.createServer((req, res) => {
