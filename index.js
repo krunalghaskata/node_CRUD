@@ -3,10 +3,14 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const config = require("./src/config/config");
+const rateLimiters = require("./src/middlewares/rate-limit");
 const { Schema } = mongoose;
 const fs = require("fs");
 const server = express();
 server.use(express.json());
+//RATE_LIMIT
+server.use(rateLimiters);
+
 // const rateLimit = require("express-rate-limit");
 
 // const index = fs.readFileSync("index.html", "utf-8");
