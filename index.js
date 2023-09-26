@@ -4,9 +4,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const config = require("./src/config/config");
 const rateLimiters = require("./src/middlewares/rate-limit");
-const { Schema } = mongoose;
-const fs = require("fs");
+// const { Schema } = mongoose;
+// const fs = require("fs");
 const server = express();
+
 server.use(express.json());
 //RATE_LIMIT
 server.use(rateLimiters);
@@ -18,9 +19,8 @@ server.use(rateLimiters);
 // const product = data.products;
 // const user = data.user;
 
-const userRouter = require("./src/Router/user/userRouter");
 const productRouter = require("./src/Router/product-Route/productRouter");
-
+const userRouter = require("./src/Router/user/userRouter");
 ///////////////////////////////////////////////////////////////////////////////
 // const server = http.createServer((req, res) => {
 //   if (req.url == "/") {
@@ -33,16 +33,6 @@ const productRouter = require("./src/Router/product-Route/productRouter");
 //   }
 // });
 
-//limiter request
-// const limiter = rateLimit({
-//   windowMs: 1 * 60 * 1000,
-//   max: 10,
-//   statusCode: 200,
-//   message: {
-//     status: 429,
-//     error: "You are doing that too much. Please try again in 10 minutes.",
-//   },
-// });
 /////////////////////////////////////////////////////////////////////////////////
 //dataabase connection
 main().catch((err) => console.log(err));
@@ -54,7 +44,7 @@ async function main() {
 ///////////////////////////////////////////////////////////////////////////////
 
 server.use("/product", productRouter.Router);
-server.use("/user", userRouter.Routers);
+server.use("/users/", userRouter.Routers);
 // server.use("/user", limiter);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

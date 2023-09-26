@@ -1,17 +1,18 @@
 const express = require("express");
-const userController = require("../../controller/user-controller/userController");
+const Controller = require("../../controller/index");
+
 const Routers = express.Router();
 
 //GET API
-Routers.get("/", userController.getAllclient)
-  .get("/:id", userController.getclient)
+Routers
+  //.get("/", Controller.getAlluser)
+  //.get("/:id", Controller.getUserById)
   //POST API
-  .post("/", userController.newclient)
-  //PUT API
-  .put("/:id", userController.replaceclient)
-  //PATCH API
-  .patch("/:id", userController.updateclient)
-  //DELET API
-  .delete("/:id", userController.deletclient);
+  .post("/signup", Controller.signup)
+  .post("/login", Controller.login);
+//PATCH API
+//.patch("/:id", Controller.update)
+//DELET API
+// .delete("/:id", Controller.delet);
 
 exports.Routers = Routers;

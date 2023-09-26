@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
+  email: { type: String, required: true },
   title: { type: String, require: true },
   description: { type: String },
   price: { type: Number, min: [0, "wrong price"], required: true },
