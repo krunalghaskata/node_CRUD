@@ -4,15 +4,9 @@ const Controller = require("../../controller/index");
 const Routers = express.Router();
 
 //GET API
-Routers
-  //.get("/", Controller.getAlluser)
-  //.get("/:id", Controller.getUserById)
-  //POST API
-  .post("/signup", Controller.signup)
-  .post("/login", Controller.login);
-//PATCH API
-//.patch("/:id", Controller.update)
-//DELET API
-// .delete("/:id", Controller.delet);
+Routers.post("/signup", Controller.signup);
+Routers.post("/login", Controller.login);
+Routers.patch("/update", Controller.update);
+Routers.delete("/delete", Controller.deleteUser);
 
 exports.Routers = Routers;

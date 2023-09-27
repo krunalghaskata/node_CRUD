@@ -3,13 +3,18 @@ const getMessage = require("../../Utils/message.js");
 
 const login = async (req, res) => {
   try {
-    const { email } = req.body;
-    const UserInstance = await User.findOne({ email });
-    if (!UserInstance) {
-      return req.send(getMessage(SIGNUP));
+    const { email, password } = req.body;
+
+    const userInstance = await User.findOne({ email, password });
+    if (!userInstance) {
+      return res.send(getMessage("SIGNUP"));
     }
+
+    res.status(200).send({
+      message: getMessage("LOGIN_SUCCESS"),
+    });
   } catch (error) {
-    return res.status(500).send(error);
+    res.status(500).send(error);
   }
 };
 
