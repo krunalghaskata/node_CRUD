@@ -8,5 +8,7 @@ Routers.post("/signup", Controller.signup);
 Routers.post("/login", Controller.login);
 Routers.patch("/update", Controller.update);
 Routers.delete("/delete", Controller.deleteUser);
+Routers.get("/findAllUser", Controller.findAllUser);
+Routers.get("/:id", Controller.findByIdUser);
 
 exports.Routers = Routers;
