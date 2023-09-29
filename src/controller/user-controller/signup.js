@@ -1,4 +1,5 @@
 const User = require("../../model/user/user.js");
+const sendMail = require("../../Utils/sendMail");
 const getMessage = require("../../Utils/message");
 
 const signup = async (req, res) => {
@@ -17,6 +18,7 @@ const signup = async (req, res) => {
       password,
     });
     await user.save();
+    await sendMail(email);  
   } catch (error) {
     res.status(500).send(error);
   }

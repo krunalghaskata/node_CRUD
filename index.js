@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const config = require("./src/config/config");
 const rateLimiters = require("./src/middlewares/rate-limit");
+const logger = require("./src/logger");
 // const { Schema } = mongoose;
 // const fs = require("fs");
 const server = express();
@@ -39,7 +40,7 @@ main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect(config.DB.CONNECTION_URL);
-  console.log(`database start on ${config.DB.CONNECTION_URL}`);
+  logger.info(`database start on ${config.DB.CONNECTION_URL}`);
 }
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,6 @@ server.use("/users/", userRouter.Routers);
 // });
 
 server.listen(config.PORT, () => {
-  console.log(`server start on http://localhost:${config.PORT}`);
+  logger.info(`server start on http://localhost:${config.PORT}`);
 });
 //////////////////////////////////////////////////////////////////////////////
