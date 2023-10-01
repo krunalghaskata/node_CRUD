@@ -1,6 +1,7 @@
 const User = require("../../model/user/user.js");
 const sendMail = require("../../Utils/sendMail");
 const getMessage = require("../../Utils/message");
+const { generateHash } = require("../../Utils/auth");
 
 const signup = async (req, res) => {
   try {
@@ -12,13 +13,17 @@ const signup = async (req, res) => {
     if (UserInstance) {
       return res.send(getMessage("USER_EXIST"));
     }
+
+    const hashPassword = await generateHash(password);
+    console.log("hello");
+
     const user = new User({
       name,
       email,
-      password,
+      password: hashPassword,
     });
     await user.save();
-    await sendMail(email);  
+    await sendMail(email);
   } catch (error) {
     res.status(500).send(error);
   }

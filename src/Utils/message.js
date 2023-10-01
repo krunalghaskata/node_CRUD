@@ -6,6 +6,10 @@ const message = {
   USER_UPDATED: "user update successfully",
   USER_NOT_FOUND: "user not found!!",
   USER_DELETED: "user delete successfully",
+  INVALID_PASSWORD: "invalid password , please try again..",
+  REQUIRED_TOKEN: "A token is required for authentication!",
+  REQUIRE_LOGIN: "require login",
+  TOKEN_EXPIRED:"token expired ,please login"
 };
 
 const getMessage = (key) => {

@@ -13,5 +13,10 @@ const config = {
     USER: process.env.EMAIL_USER,
     PASSWORD: process.env.EMAIL_PASSWORD,
   },
+  TOKEN: {
+   SIGN : process.env.JWT_SECRET,
+   LIFE_TIME   :process.env.JWT_LIFE_TIME 
+  }
+ 
 };
 module.exports = config;

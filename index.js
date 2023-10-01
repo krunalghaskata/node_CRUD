@@ -35,7 +35,7 @@ const userRouter = require("./src/Router/user/userRouter");
 // });
 
 /////////////////////////////////////////////////////////////////////////////////
-//dataabase connection
+//database connection
 main().catch((err) => console.log(err));
 
 async function main() {
