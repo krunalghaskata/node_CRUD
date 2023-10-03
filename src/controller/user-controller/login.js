@@ -19,7 +19,10 @@ const login = async (req, res) => {
     const token = await generateToken({ id: userInstance.id });
     userInstance.token = token;
     userInstance.save();
-    res.status(200).send({ message: getMessage("LOGIN_SUCCESS"), userToken: token });
+    res.status(200).send({
+      message: getMessage("LOGIN_SUCCESS"),
+      userToken: token,
+    });
   } catch (error) {
     res.status(500).send(error);
   }

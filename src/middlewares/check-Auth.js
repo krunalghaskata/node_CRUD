@@ -1,5 +1,5 @@
 const CONFIG = require("../config/config.js");
-const { verifyToken } = require("../middlewares/check-Auth.js");
+const { verifyToken } = require("../Utils/auth");
 const User = require("../model/user/user");
 const getMessage = require("../Utils/message.js");
 

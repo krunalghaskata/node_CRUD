@@ -16,6 +16,10 @@ const config = {
   TOKEN: {
    SIGN : process.env.JWT_SECRET,
    LIFE_TIME   :process.env.JWT_LIFE_TIME 
+  },
+  REDIS: {
+    HOST: process.env.REDIS_HOST,
+    PORT:process.env.REDIS_PORT
   }
  
 };
