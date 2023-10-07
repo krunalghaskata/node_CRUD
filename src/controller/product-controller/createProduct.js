@@ -5,7 +5,7 @@ const createProduct = async (req, res) => {
   try {
     const productCreate = new productUser(req.body);
     await productCreate.save();
-    res.status(201).json(doc);
+    res.status(201).send(productCreate);
   } catch (error) {
     res.status(500).send(error);
   }

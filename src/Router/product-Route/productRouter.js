@@ -6,6 +6,7 @@ const Controller = require("../../controller/index");
 //GET API
 Router.get("/", Controller.getAllProduct)
   .get("/:id", Controller.getProduct)
+  .get('/aggregate',Controller.aggregate)
   //POST API
   .post("/", Controller.createProduct)
   //PUT API

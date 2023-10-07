@@ -4,6 +4,7 @@ const createProduct = require("./createProduct");
 const replaceProduct = require("./replaceProduct");
 const updateProduct = require("./updateProduct");
 const deleteProduct = require("./deletProduct");
+const aggregate = require("./aggregate");
 
 module.exports = {
   getAllProduct,
@@ -12,4 +13,5 @@ module.exports = {
   replaceProduct,
   updateProduct,
   deleteProduct,
+  aggregate,
 };

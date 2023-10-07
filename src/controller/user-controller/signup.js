@@ -7,7 +7,7 @@ const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!(name && email && password)) {
-      res.send(getMessage("REQUIRED_INPUT"));
+      return res.send(getMessage("REQUIRED_INPUT"));
     }
     const UserInstance = await User.findOne({ email });
     if (UserInstance) {
@@ -15,7 +15,6 @@ const signup = async (req, res) => {
     }
 
     const hashPassword = await generateHash(password);
-    console.log("hello");
 
     const user = new User({
       name,

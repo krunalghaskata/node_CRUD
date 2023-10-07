@@ -1,6 +1,6 @@
 const CONFIG = require("../config/config");
 const nodemailer = require("nodemailer");
-// const logger = require("../logger");
+const logger = require("../logger");
 
 const sendMail = async (email) => {
   try {
@@ -8,7 +8,7 @@ const sendMail = async (email) => {
       service: "gmail",
       auth: {
         user: CONFIG.EMAIL.USER,
-        Password: CONFIG.EMAIL.PASSWORD,
+        pass: CONFIG.EMAIL.PASSWORD,
       },
     });
 
@@ -19,7 +19,7 @@ const sendMail = async (email) => {
       text: "hello friend where are you from ",
     };
     const data = await transporter.sendMail(mailOption);
-    console.log(`${data.accepted} ${data.response}${data.messageId}`);
+    logger.info(`${data.accepted} ${data.response}${data.messageId}`);
   } catch (error) {
     return error;
   }
